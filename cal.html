@@ -4,6 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>计算器 - 三个输入值</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            input {
+                max-width: 100%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
     <script>
         function calculate() {
             let a = parseFloat(document.getElementById("inputA").value);
@@ -22,9 +82,9 @@
 </head>
 <body>
     <h2>请输入坡高、坡长（水平长度）、材料高度（单位均为米）</h2>
-    <label>坡高: <input type="number" id="inputA"></label><br>
-    <label>坡长: <input type="number" id="inputB"></label><br>
-    <label>材料高度: <input type="number" id="inputC"></label><br>
+    <label>坡高: <input type="number" id="inputA"></label>
+    <label>坡长: <input type="number" id="inputB"></label>
+    <label>材料高度: <input type="number" id="inputC"></label>
     <button onclick="calculate()">计算</button>
     <h3>切割长度（单位为米）: <span id="result">?</span></h3>
 </body>
