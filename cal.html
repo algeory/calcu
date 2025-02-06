@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器 - 三个输入值</title>
+    <script>
+        function calculate() {
+            let a = parseFloat(document.getElementById("inputA").value);
+            let b = parseFloat(document.getElementById("inputB").value);
+            let c = parseFloat(document.getElementById("inputC").value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c) || b === 0) {
+                alert("请输入有效的数字，且 B 不能为 0！");
+                return;
+            }
+
+            let result = 2 * c * Math.tan(Math.atan(a / b) / 2);
+            document.getElementById("result").textContent = result.toFixed(6); // 保留6位小数
+        }
+    </script>
+</head>
+<body>
+    <h2>请输入坡高、坡长（水平长度）、材料高度（单位均为米）</h2>
+    <label>坡高: <input type="number" id="inputA"></label><br>
+    <label>坡长: <input type="number" id="inputB"></label><br>
+    <label>材料高度: <input type="number" id="inputC"></label><br>
+    <button onclick="calculate()">计算</button>
+    <h3>切割长度（单位为米）: <span id="result">?</span></h3>
+</body>
+</html>
